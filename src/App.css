@@ -1,38 +1,173 @@
 .App {
-  text-align: center;
+  background-image: url("https://images.wallpaperscraft.ru/image/single/pole_nebo_trava_122855_3840x2160.jpg");
+  background-size: cover;
+  height: 100vh;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main_cow {
+  animation-fill-mode: forwards;
+  animation: start_img_cow 2s forwards ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes start_img_cow {
+  0% {
+    scale: 0.5;
+  }
+
+  100% {
+    scale: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.start_mod {
+  position: absolute;
+  left: 25%;
+  top: 5%;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  display: flex;
+  text-align: center;
+  animation-fill-mode: forwards;
+  animation: start_cow 2s forwards 5s ease;
+}
+
+@keyframes start_cow {
+  0% {
+    top: 5%;
+  }
+
+  100% {
+    top: -100%;
+  }
+}
+
+h1 {
   color: white;
+  font-size: 60px;
+  line-height: 0px;
+  text-shadow: 10px 10px 10px black;
 }
 
-.App-link {
-  color: #61dafb;
+.menu {
+  position: absolute;
+  display: flex;
+  font-weight: 500;
+  color: rgb(175, 135, 61);
+  font-size: 44px;
+  width: 100%;
+  max-width: 800px;
+  justify-content: space-between;
+  bottom: 20px;
+  left: 25%;
+  animation: start_menu 2s forwards 5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
+@keyframes start_menu {
+  0% {
+    bottom: 20px;
+    max-width: 800px;
+    left: 25%;
+  }
+
+  100% {
+    bottom: 10%;
+    left: 6%;
+    max-width: 90%;
+  }
+}
+
+.cow_item {
+  cursor: pointer;
+  text-shadow: 10px 10px 10px black;
+}
+
+.overflow_cow {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 20%;
+  opacity: 0;
+  animation: start_overflow 2s forwards 6s ease;
+}
+
+@keyframes start_overflow {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.cow img {
+  cursor: pointer;
+  width: 250px;
+}
+
+.modal {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.513) !important;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+  opacity: 0;
+  scale: 0;
+}
+
+.active {
+  scale: 1;
+  opacity: 1;
+}
+
+.modal img {
+  height: 60%;
+  width: 35%;
+  animation: cow_spin 30000s infinite;
+}
+
+@keyframes cow_spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+
+  100% {
+    transform: rotate(3600000deg);
   }
+}
+
+.description {
+  color: white !important;
+  display: flex;
+  height: 60%;
+  line-height: 40px;
+  justify-content: center;
+  text-shadow: 10px 10px 10px black;
+  font-size: 22px;
+  flex: 1;
+}
+
+.icon {
+  height: 100%;
+  width: 150px;
+  font-size: 22px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white !important;
+  text-shadow: 10px 10px 10px black;
+  transition: all 0.3s;
+}
+
+.icon:hover {
+  background-color: rgba(255, 255, 255, 0.178);
 }
